@@ -3,13 +3,18 @@ mac-local-provision
 
 [![pipeline status](https://gitlab.com/quietshelf-public/mac-local-provision/badges/master/pipeline.svg)](https://gitlab.com/quietshelf-public/mac-local-provision/pipelines)
 
-NOTE: in development. This has not been tested on a fresh machine yet nor does it have any support outside of the latest OSx distro.
+NOTE: This has not been tested on a fresh machine yet nor does it have any support outside of the latest OSx distro.
 
-## what this does
+## What this does
 
 This will set up a local machine with your basic environments for development:
 
 - homebrew
+- ansible
+- python
+
+#### Future Support
+
 - git
 - docker
 - rbenv
@@ -17,12 +22,12 @@ This will set up a local machine with your basic environments for development:
 - virtualenv
 - php
 
-## usage
+## Getting Started
 
 1. `make` - run this to get Brew/Python/Ansible dependencies.
 2. `make provision`
 
-## what this shouldn't do
+### What you shouldn't do
 
 Often its better to run parts of your development stack on your host machine, for performance or ease of use reasons. A good example is having your front-end pipeline (e.g webpack, npm, gulp, watchers, etc) running on the host so your feedback on HMR/live reload is as quick as possible.
 
