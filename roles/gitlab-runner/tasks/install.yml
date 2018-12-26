@@ -1,0 +1,13 @@
+---
+- name: Check if gitlab runner needs to be installed
+  stat:
+    path: "{{ gitlab_binary_path }}/gitlab-runner"
+  register: is_gitlab_runner_installed
+  ignore_errors: yes
+
+- name: Download the gitlab runner
+  when: not is_gitlab_runner_installed.stat.exists
+  get_url:
+    url: https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-darwin-amd64
+    dest: /usr/local/bin/gitlab-runner
+    mode: a+x

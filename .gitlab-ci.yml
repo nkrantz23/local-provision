@@ -1,0 +1,14 @@
+image: yokogawa/ansible-lint
+
+stages:
+  - test
+
+syntax:
+  stage: test
+  script:
+    - ansible-playbook mac.yml --syntax-check
+
+lint:
+  stage: test
+  script:
+    - ansible-lint mac.yml

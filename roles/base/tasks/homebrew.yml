@@ -1,9 +1,12 @@
 ---
 - name: Update homebrew
   command: brew update
+  when: not skip_brew
 
 - name: Install packages from brewfile
   command: brew bundle --file={{ brewfile_path }}
+  when: not skip_brew
 
 - name: Cleanup homebrew
   command: brew cleanup -s
+  when: not skip_brew

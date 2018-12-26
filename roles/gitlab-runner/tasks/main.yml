@@ -1,0 +1,15 @@
+- include_tasks: install.yml
+
+- name: Check if gitlab-runner is running
+  command: gitlab-runner status 2>&1
+  register: gitlab_runner_status
+  ignore_errors: true
+
+- name: Install the gitlab-runner if needed
+  command: gitlab-runner install
+  when: gitlab_runner_status.stderr | regex_search('Service is not installed')
+
+- name: Start the gitlab-runner if needed
+  command: gitlab-runner start
+  when: gitlab_runner_status.stderr | regex_search('Service is not running') or
+        gitlab_runner_status.stderr | regex_search('Service is not installed')
