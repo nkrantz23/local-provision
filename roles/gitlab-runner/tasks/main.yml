@@ -4,6 +4,7 @@
   command: gitlab-runner status 2>&1
   register: gitlab_runner_status
   ignore_errors: true
+  when: not skip_gitlab
 
 - name: Install the gitlab-runner if needed
   command: gitlab-runner install

@@ -6,9 +6,9 @@ stages:
 syntax:
   stage: test
   script:
-    - ansible-playbook mac.yml --syntax-check
+    - make syntax
 
 lint:
   stage: test
   script:
-    - ansible-lint mac.yml
+    - make lint

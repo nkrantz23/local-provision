@@ -9,4 +9,10 @@ install-galaxy:
 provision: install-galaxy
 	ansible-playbook mac.yml $(PLAYBOOK_ARGS)
 
-.PHONY: all install provision
+lint:
+	ansible-lint mac.yml
+
+syntax:
+	ansible-playbook mac.yml --syntax-check
+
+.PHONY: all install provision lint syntax
