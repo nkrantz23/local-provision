@@ -1,0 +1,9 @@
+---
+- name: Update homebrew
+  command: brew update
+
+- name: Install packages from brewfile
+  command: brew bundle --file={{ brewfile_path }}
+
+- name: Cleanup homebrew
+  command: brew cleanup -s

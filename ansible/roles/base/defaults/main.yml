@@ -1,0 +1,4 @@
+---
+home_dir: ~/
+project_workspace: "{{ home_dir }}/Projects"
+brewfile_path: "{{ playbook_dir }}/../Brewfile"

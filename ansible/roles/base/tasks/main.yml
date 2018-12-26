@@ -1,0 +1,14 @@
+---
+- name: Setup project workspace
+  file:
+    path: "{{ project_workspace }}"
+    state: directory
+    mode: 0755
+
+- name: Setup ssh directory
+  file:
+    path: "{{ home_dir }}/.ssh"
+    state: directory
+    mode: 0700
+
+- include_tasks: homebrew.yml
