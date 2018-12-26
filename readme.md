@@ -1,7 +1,7 @@
 mac-local-provision
 ------
 
-+[![pipeline status](https://gitlab.com/quietshelf-public/mac-local-provision/badges/master/pipeline.svg)](https://gitlab.com/quietshelf-public/mac-local-provision/pipelines)
+[![pipeline status](https://gitlab.com/quietshelf-public/mac-local-provision/badges/master/pipeline.svg)](https://gitlab.com/quietshelf-public/mac-local-provision/pipelines)
 
 NOTE: in development. This has not been tested on a fresh machine yet nor does it have any support outside of the latest OSx distro.
 
